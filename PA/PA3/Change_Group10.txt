@@ -1,0 +1,39 @@
+Changes Between Documents in PA2 and PA3
+---------------------------------------------------------------------
+1. Use-Case Specifications
+---------------------------------------------------------------------
+- Version: 1.0 (12-07-2025) --> 2.0 (30-07-2025)
+
+- Additions / Changes:
+  + Updated Extension Points in multiple use-cases:
+    * Use-case 11: Added sub-point "Apply Coupon".
+    * Use-case 30: Added sub-point "Delete".
+    * Use-case 31: Removed all sub-points under Extension Points.
+
+  + Added ID for each use-case in the document.
+
+  + Updated the Revision History table for version 2.0
+  to reflect the modifications made in the document.
+
+---------------------------------------------------------------------
+2. Use-Case Model
+---------------------------------------------------------------------
+- Additions / Changes: 
+  + Fixed arrow directions for all «extend» and «include» relationships
+  to match standard UML semantics.
+
+  + Designed and updated Use-case model using draw.io to illustrate
+  Class and other diagrams.
+
+---------------------------------------------------------------------
+3. Prototype
+---------------------------------------------------------------------
+- Additions / Changes:
+Created and updated prototype using Figma to illustrate UI elements.
+
+---------------------------------------------------------------------
+4. Documents Without Any Changes
+---------------------------------------------------------------------
+- Project Plan
+- Vision Document
+
