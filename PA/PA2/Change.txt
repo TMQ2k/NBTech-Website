@@ -1,0 +1,27 @@
+Comparison of Changes Between v1.0 and v2.0 of Project Plan and Vision Document 
+
+----------------------------------------
+1. Project plan
+----------------------------------------
+- Version: 1.0 (09-06-2025) --> 2.0 (05-07-2025)
+
+- Additions:
+  + Updated the list of project deliverables with detailed descriptions, deadlines.
+  + Added a "Task" column in the Revision History table.
+  + Detailed responsibilities for each author:
+    * Nguyễn Ngọc Hưng Phát: Sections 2, 4.2
+    * Lê Nguyên Thảo: Sections 3, 4.2
+    * Nguyễn Thanh Owen: Sections 4.2, 4.3, 2.3
+
+----------------------------------------
+2. Vision Document
+----------------------------------------
+- Version: 1.0 (09-06-2025) --> 2.0 (01-07-2025)
+
+- Additions:
+  + Added a "Task" column in the Revision History table.
+  + Detailed responsibilities for each author:
+    * Trần Minh Quang: Sections 1, 2, 5, 7
+    * Đỗ Đăng Nhật Tiến: Sections 3, 4, 6
+
+
