@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - NBTech</title>
+  <link rel="stylesheet" href="./about.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <toper>
+            <div class="top_header"></div>
+    </toper>
+    <header class="full-header">
+        <div class="holdheader">
+            <header>
+                <nav class="header">
+                    <div class="list_in_header">
+                        <div class="logo">
+                            <div class="exclusive"><a href="/User/homepage/index.html">NBTech</a></div>
+                        </div>
+
+                        <div class="nav_list">
+                            <div class="home"><a href="/User/homepage/index.html">Trang chủ</a></div>
+                            <div class="about"><a href="../about_page/about.html">About</a></div>
+                            <div class="signup"><a href = "../authentication/signup/signup.html">Đăng ký</a></div>
+                        </div>
+                    </div>
+
+                    <div class="frame_search_cart_account">
+                        <div class="search">
+                            <input class = "search_input" type="text" placeholder="Tìm kiếm">
+                            <span class = "search-icon material-symbols-outlined">search</span>
+                        </div>
+
+                        <div class="cart" id="cart-div">
+                            <span class="cart-icon material-symbols-outlined">shopping_cart</span>
+                            <span class="cart-count">0</span>
+                        </div>
+                        <div class="account">
+                            <span class = "account-icon material-symbols-outlined">person</span>
+                        
+                            <div class="sub-menu-wrap">
+                                <div class="sub-menu">
+                                    <div class="user-info">
+                                        <i class='bx  bx-hand-rock'  ></i> 
+                                        <h2>Thanh Owen</h2>
+                                    </div>
+                                    <hr>
+                                    <a href="#" class="sub-menu-link">
+                                        <i class='bx  bx-user-square'  ></i> 
+                                        <p>Chỉnh sửa hồ sơ</p>
+                                        <span>></span>
+                                    </a>
+
+                                    <a href="#" class="sub-menu-link">
+                                        <i class='bx  bx-shopping-bag-alt'  ></i> 
+                                        <p>Đơn hàng của bạn</p>
+                                        <span>></span>
+                                    </a>
+
+                                    <a href="#" id = "logout-link" class="sub-menu-link">
+                                        <i class='bx  bx-door-open'></i> 
+                                        <p>Đăng xuất</p>
+                                        <span>></span>
+                                    </a>
+                                </div>
+                            </div>
+                            </div>
+
+                    </div>
+                </nav>
+            </header>
+        </div>
+    </header>
+  
+
+  <div class="body">
+    <!-- Nội dung About từ index.html -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-header">
+          <h2>NBTech</h2>
+          <div class="about-content">
+            <div class="about-text">
+              <p>Founded in 2023, NBTech is a fast-growing online retailer specializing in electronics, laptops, and digital accessories, with a growing presence across Bangladesh. Supported by modern data-driven marketing and customer support systems, NBTech partners with over 1,200 trusted sellers, 100 recognized tech brands, and has served more than 150,000 customers within its first year.</p>
+            <p>Offering a carefully curated catalog of over 50,000 products, NBTech is committed to delivering quality, reliability, and competitive pricing. From high-performance laptops to essential gadgets, we provide solutions tailored for students, professionals, and tech enthusiasts alike.</p>
+            </div>
+            <div class="about-image">
+              <img src="./images/v299_2976.png" alt="Team" />
+            </div>
+          </div>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-box"><h3>10.5k</h3><p>Sellers active on our site</p></div>
+          <div class="stat-box highlight"><h3>33k</h3><p>Monthly Product Sales</p></div>
+          <div class="stat-box"><h3>45.5k</h3><p>Customer active in our site</p></div>
+          <div class="stat-box"><h3>25k</h3><p>Annual gross sale in our site</p></div>
+        </div>
+
+        <div class="about-team-slider">
+          <div class="team-wrapper">
+            <div class="team-slide active">
+              <div class="member"><img src="./images/owen.jpg" alt="Nguyễn Thanh Owen" /><h4>Nguyễn Thanh Owen</h4><p>Leader</p></div>
+              <div class="member"><img src="./images/thao.jpg" alt="Lê Nguyên Thảo" /><h4>Lê Nguyên Thảo</h4><p>Designer</p></div>
+              <div class="member"><img src="./images/quang.jpg" alt="Trần Minh Quang" /><h4>Trần Minh Quang</h4><p>Developer</p></div>
+            </div>
+            <div class="team-slide">
+              <div class="member"><img src="./images/tien.jpg" alt="Đỗ Đăng Nhật Tiến" /><h4>Đỗ Đăng Nhật Tiến</h4><p>Business Analyst</p></div>
+              <div class="member"><img src="./images/phat.jpg" alt="Nguyễn Ngọc Hưng Phát" /><h4>Nguyễn Ngọc Hưng Phát</h4><p>Developer</p></div>
+            </div>
+          </div>
+          <div class="team-dots">
+            <span class="dot active" onclick="showSlide(0)"></span>
+            <span class="dot" onclick="showSlide(1)"></span>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-box">
+            <div class="service-icon"><img src="./images/icon-delivery.png" alt="Delivery" /></div>
+            <h4>FREE AND FAST DELIVERY</h4><p>Free delivery for all orders over $140</p>
+          </div>
+          <div class="service-box">
+            <div class="service-icon"><img src="./images/icon-support.png" alt="Support" /></div>
+            <h4>24/7 CUSTOMER SERVICE</h4><p>Friendly 24/7 customer support</p>
+          </div>
+          <div class="service-box">
+            <div class="service-icon"><img src="./images/icon-moneyback.png" alt="Money Back" /></div>
+            <h4>MONEY BACK GUARANTEE</h4><p>We return money within 7 days</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="holdfooter">
+      <div class="footer_row">
+        <div class="footer-col"><h1>NBTech</h1></div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li>Ho Chi Minh City</li>
+            <li>ntowen23@clc.fitus.edu.vn</li>
+            <li>+84 12345678901</li>
+          </ul>
+        </div>
+        <div class="footer-col"></div><div class="footer-col"></div><div class="footer-col"></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.team-slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        dots[i].classList.toggle('active', i === index);
+      });
+      currentSlide = index;
+    }
+  </script>
+  <script src="/User/js_header/auth.js"></script>
+  <script src="/User/js_header/headerLink.js"></script>
+  <script src="/User/js_header/searching.js"></script>
+</body>
+
+</html>
