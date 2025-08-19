@@ -1055,6 +1055,9 @@ body {
   cursor: pointer;
 }
 
+.cart-count{
+  color: #db4444
+}
 
 /*////////////////////////////////*/
 .full-header {

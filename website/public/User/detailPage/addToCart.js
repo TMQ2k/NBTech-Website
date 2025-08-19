@@ -59,6 +59,8 @@ async function addToCart(quantity) {
 
     // Lưu giỏ hàng localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
+    sessionStorage.setItem('showNotification', 'true');
+    location.reload();
   } catch (error) {
     console.error(error);
     alert("Có lỗi xảy ra khi thêm sản phẩm vào giỏ hàng");
@@ -72,9 +74,6 @@ btnAddToCart.addEventListener('click', () => {
 
   addToCart(quantity)
     .then(() => {
-      // Lưu flag báo reload xong sẽ show thông báo
-      sessionStorage.setItem('showNotification', 'true');
-      location.reload();
     })
     .catch(err => {
       console.error(err);

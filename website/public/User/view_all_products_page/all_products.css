@@ -240,8 +240,12 @@ body {
     position: relative;
 }
 
+.cart-count{
+  color: #DB4444
+}
+
 .header {
-  position: relative; /* hoặc bỏ luôn */
+  position: relative;
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px 40px;

@@ -1,9 +1,9 @@
-// script.js
 const filterType = document.getElementById("filter-type");
 const dayInput = document.getElementById("filter-day");
 const monthInput = document.getElementById("filter-month");
 const yearInput = document.getElementById("filter-year");
 
+// Cập nhật hiển thị ô chọn ngày / tháng / năm
 filterType.addEventListener("change", () => {
   const type = filterType.value;
   dayInput.style.display = type === "day" ? "inline-block" : "none";
@@ -16,16 +16,7 @@ dayInput.addEventListener("change", updateStats);
 monthInput.addEventListener("change", updateStats);
 yearInput.addEventListener("input", updateStats);
 
-function updateStats() {
-  const type = filterType.value;
-  const filterDate = getFilterDate(type);
-  const result = calculateStats(type, filterDate);
-
-  document.getElementById("total-revenue").textContent = result.totalRevenue.toLocaleString("vi-VN") + " VND";
-  document.getElementById("products-sold").textContent = result.totalSold;
-  document.getElementById("total-orders").textContent = result.totalOrders;
-}
-
+// Hàm lấy ngày theo định dạng dd/mm/yyyy hoặc mm/yyyy hoặc yyyy
 function getFilterDate(type) {
   if (type === "day") {
     return dayInput.value.split("-").reverse().join("/");
@@ -34,79 +25,52 @@ function getFilterDate(type) {
   } else if (type === "year") {
     return `${yearInput.value}`;
   } else {
-    return null; // for "all"
+    return null; // "all"
   }
 }
 
-function calculateStats(type, filterDate) {
-  const orders = [
-    {
-      _id: "683dbabcbcc841123dcb2758",
-      userid: "683db2cfbcc841123dcb274c",
-      status: "1",
-      items: [
-        ["683db4b9bcc841123dcb2750", 1],
-        ["683db9bebcc841123dcb2756", 1]
-      ],
-      date: "20/06/2025"
-    },
-    {
-      _id: "683dbcc3bcc841123dcb2759",
-      userid: "683db2cfbcc841123dcb274d",
-      status: "2",
-      items: [
-        ["683db4b9bcc841123dcb2750", 3]
-      ],
-      date: "20/06/2025"
-    }
-  ];
+// Hàm tính toán doanh thu, số lượng sản phẩm, số đơn hàng
+async function updateStats() {
+  const type = filterType.value;
+  const filterDate = getFilterDate(type);
 
-  const products = [
-    {
-      _id: "683db9bebcc841123dcb2756",
-      name: "Logitech MX Master 3S Wireless Mouse",
-      price: 2390000,
-      date: "20/06/2025"
-    },
-    {
-      _id: "683dba75bcc841123dcb2757",
-      name: "Akko 5075B Plus Black & Gold",
-      price: 1890000,
-      date: "21/06/2025"
-    },
-    {
-      _id: "683db4b9bcc841123dcb2750",
-      name: "MacBook Air M2",
-      price: 28990000,
-      date: "22/06/2025"
-    }
-  ];
+  try {
+    const res = await fetch('/api/orders');
+    const orders = await res.json();
 
-  let totalRevenue = 0;
-  let totalSold = 0;
-  let totalOrders = 0;
+    let totalRevenue = 0;
+    let totalSold = 0;
+    let totalOrders = 0;
 
-  orders.forEach(order => {
-    let match = false;
-    if (type === "day" && order.date === filterDate) match = true;
-    if (type === "month" && order.date.endsWith(filterDate)) match = true;
-    if (type === "year" && order.date.endsWith(`/${filterDate}`)) match = true;
-    if (type === "all") match = true;
+    orders.forEach(order => {
+      // Chỉ tính đơn đã xác nhận hoặc hoàn thành
+      if (order.status !== "2" && order.status !== "3" && order.status !== "4") return;
 
-    if (match) {
-      totalOrders++;
-      order.items.forEach(([productId, quantity]) => {
-        const product = products.find(p => p._id === productId);
-        if (product) {
-          totalSold += quantity;
-          totalRevenue += product.price * quantity;
-        }
-      });
-    }
-  });
+      // Kiểm tra ngày phù hợp theo bộ lọc
+      let match = false;
+      if (type === "day" && order.date === filterDate) match = true;
+      if (type === "month" && order.date.endsWith(filterDate)) match = true;
+      if (type === "year" && order.date.endsWith("/" + filterDate)) match = true;
+      if (type === "all") match = true;
 
-  return { totalRevenue, totalSold, totalOrders };
+      if (match) {
+        totalOrders++;
+        order.items.forEach(item => {
+          totalSold += item.quantity;
+          totalRevenue += item.price * item.quantity;
+        });
+      }
+    });
+
+    // Cập nhật kết quả ra giao diện
+    document.getElementById("total-revenue").textContent = totalRevenue.toLocaleString("vi-VN") + " VND";
+    document.getElementById("products-sold").textContent = totalSold;
+    document.getElementById("total-orders").textContent = totalOrders;
+
+  } catch (err) {
+    console.error("Lỗi khi tải đơn hàng:", err);
+  }
 }
 
-// Khởi tạo lần đầu khi trang load
+// Gọi hàm khi trang vừa tải xong
 document.addEventListener("DOMContentLoaded", updateStats);

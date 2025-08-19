@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     users = await resUsers.json();
     products = await resProducts.json();
 
+    reviews.sort((a, b) => parseDate(b.date) - parseDate(a.date));
+
     renderReviews(reviews);
     updateBodyHeightAndLine();
   } catch (error) {
@@ -21,6 +23,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     alert('Lỗi khi tải dữ liệu. Vui lòng thử lại.');
   }
 });
+
+
+function parseDate(str) {
+  if (!str) return new Date(0);
+
+  if (str.includes('/')) {
+    // định dạng dd/mm/yyyy
+    const parts = str.trim().split('/');
+    if (parts.length !== 3) return new Date(0);
+    const [d, m, y] = parts.map(Number);X``
+    return new Date(y, m - 1, d);
+  } else if (str.includes('-')) {
+    // định dạng yyyy-mm-dd
+    return new Date(str);
+  }
+
+  return new Date(0);
+}
+
+
 
 // Hàm lấy tên người dùng theo userId
 function getUserNameById(userId) {

@@ -36,3 +36,30 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
+
+
+// GET /api/orders/sold-products - Danh sách sản phẩm đã bán
+router.get('/sold-products', async (req, res) => {
+  const orders = await orderModel.find({ status: { $in: ['2', '3', '4'] } }); // lọc đơn đã xác nhận/thành công
+  const productMap = new Map();
+
+  for (const order of orders) {
+    for (const item of order.items) {
+      const { name, price, quantity } = item;
+      if (!productMap.has(name)) {
+        productMap.set(name, {
+          name,
+          totalQuantity: 0,
+          totalRevenue: 0
+        });
+      }
+      const productData = productMap.get(name);
+      productData.totalQuantity += quantity;
+      productData.totalRevenue += price * quantity;
+    }
+  }
+
+  const soldProducts = Array.from(productMap.values());
+
+  res.json(soldProducts);
+});
