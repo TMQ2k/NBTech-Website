@@ -1,0 +1,48 @@
+Changes Between Documents in PA3 and PA4
+---------------------------------------------------------------------
+1. Software Architecture Document
+---------------------------------------------------------------------
+- Version: 1.0 (02-08-2025) --> 2.2 (14-08-2025)
+
+- Additions / Changes:
+  + Version 2.0 (13-08-2025) – Revised software architecture:
+    * Updated Section 4.2 – Nguyễn Thanh Owen
+    * Updated Section 4.3 – Nguyễn Ngọc Hưng Phát
+    * Added description for Logical View (Section 4) – Lê Nguyên Thảo
+
+  + Version 2.1 (14-08-2025) – Deployment updates:
+    * Added Section 5.1 (Deployment Environment) – Nguyễn Ngọc Hưng Phát
+    * Added Section 5.2 (Deployment Architecture) – Nguyễn Thanh Owen
+    * Added Section 5.3 (Deployment Configuration) – Lê Nguyên Thảo
+
+  + Version 2.2 (14-08-2025) – Implementation view:
+    * Added Section 6 (Implementation View) – Trần Minh Quang, Đỗ Đăng Nhật Tiến
+
+---------------------------------------------------------------------
+2. AI Prompts
+---------------------------------------------------------------------
+- Additions / Changes: 
+  + Overview & Purpose:
+    * Modified introduction to reference “Similar to previous PA” instead of the original generic definition.
+    * Removed detailed list of AI task examples (text, code, images, translation, analysis).
+
+  + Proposing Document Outline:
+    * Rewritten to specify that the outline is for the Deployment Document instead of general documentation.
+    * Added details on included sections (overview, objectives, system architecture, deployment workflow, deployment environments).
+    * Emphasis shifted from “tailored to our objectives” to “comprehensive coverage of essential deployment aspects.”
+
+  + Giving Examples Of Contents:
+    * Changed context from generating examples for general documentation to UI Prototype.
+    * Focused on establishing structure for interface components and interactions.
+    * Added emphasis on ensuring consistency between design and development phases.
+
+  + Removed Sections:
+    * Entire Translating Document section removed.
+    * Entire Generating Code section removed.
+
+---------------------------------------------------------------------
+4. New Documents
+---------------------------------------------------------------------
+- UI Prototype Document
+- UI Prototype Images
+
